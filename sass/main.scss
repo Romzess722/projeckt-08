@@ -1,0 +1,33 @@
+@import './utils/mixins';
+@import './utils/variables';
+@import './base/reset';
+@import './base/base-style';
+@import './utils/hidden';
+
+//COMPONENTS
+@import './components/container';
+@import './components/site-logo';
+@import './components/modal';
+@import './components/forma';
+@import './components/section';
+
+@import './components/heading';
+@import './components/pre-title';
+@import './components/button';
+@import './components/button-set';
+
+@import './components/social';
+@import './components/checkbox';
+@import './components/search';
+@import './components/sent';
+
+//LAYOUTS
+@import './layout/header';
+@import './layout/hero';
+@import './layout/feature';
+@import './layout/doing';
+
+@import './layout/team';
+@import './layout/clients';
+@import './layout/portfolio';
+@import './layout/footer';

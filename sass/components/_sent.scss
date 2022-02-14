@@ -1,0 +1,40 @@
+.sent {
+  @media screen and(max-width: 1199px) {
+    margin-top: 60px;
+  }
+
+  @media screen and(min-width: 1200px) {
+    margin-left: 93px;
+  }
+}
+.sent-form {
+  margin-top: 20px;
+  @media screen and(min-width: 1200px) {
+    display: flex;
+  }
+}
+
+.sent-label {
+  @media screen and(min-width: 1200px) {
+    width: 358px;
+    margin-right: 12px;
+  }
+}
+.sent-input {
+  width: 100%;
+
+  padding: 15px 16px;
+  // width: 358px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: $footer-color;
+  color: $text-color-actve;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 400;
+}
+.sent__icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}

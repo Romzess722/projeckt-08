@@ -1,0 +1,321 @@
+.container__header-nav {
+  display: flex;
+  align-items: center;
+
+  margin-left: auto;
+}
+
+.container--position,
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* убирает правый марджем у последней ссылки */
+.site-nav__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+/* убирает правый марджем у последней ссылки 
+в блоке контакты*/
+.contact__link:not(:last-child) {
+  @include desktop {
+    margin-right: 50px;
+  }
+}
+
+.site__link,
+.contact__link {
+  transition: color $animate;
+  @include desktop {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  text-decoration: none;
+}
+
+/* блок контактов в хедере */
+.contact {
+  display: none;
+
+  @include tablet {
+    display: block;
+    margin-left: auto;
+  }
+
+  @include desktop {
+    display: flex;
+  }
+}
+
+/* елемент ссылки в хедере */
+.site__link {
+  color: $primary-text-color;
+}
+
+/*^ Делает активной вкладку текущей страницы */
+.site-link--active {
+  color: $accent-color;
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 4px;
+    border-radius: 4px;
+    width: 100%;
+    background-color: $button-hover;
+    left: 0;
+    bottom: -33px;
+  }
+}
+
+/* елемент ссылки в хедере */
+.site__link {
+  color: $primary-text-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.site-nav__item {
+  position: relative;
+}
+
+.header {
+  outline: 1px solid $border-header;
+  position: relative;
+}
+
+/*^  Стили для ссылок хедере и контактов общие */
+.site-nav {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  list-style: none;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  @media screen and(max-width: 1200px) {
+    padding: 32px 0;
+  }
+  display: none;
+  @media screen and(min-width: 768px) {
+    display: flex;
+  }
+}
+
+.contact__link {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: $text-color;
+  list-style: none;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+
+  @media screen and(max-width: 1200px) {
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+/* svg в хедере для контактов */
+.contact__icon {
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+//стили для кнопки открытия-закрытия меню модалки Repeta
+.close-modalmenu {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  @media screen and(min-width: 768px) {
+    display: none;
+  }
+  &:hover {
+    fill: $accent-color;
+  }
+  z-index: 1;
+}
+
+.icon-closemenu {
+  display: none;
+}
+
+.close-modalmenu.is-open .icon-closemenu {
+  display: block;
+}
+
+.close-modalmenu.is-open .icon-menu {
+  display: none;
+}
+
+.menu-container {
+  //display: none;
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  position: fixed;
+  //   background-color: $text-color-actve;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  // position: absolute;
+  // top: 100%;
+  // width: 100%;
+  // left: 0;
+  background-color: antiquewhite;
+  padding: 48px 40px;
+  text-align: center;
+  height: 100vh;
+  &.is-open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @media screen and(min-width: 768px) {
+    //display: none;
+    &.is-open {
+      display: none;
+    }
+  }
+
+  transform: translateX(-100%);
+}
+
+.menu-container.is-open {
+  transform: translateX(0%);
+  transition: transform 550ms;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+//по видеоуроку Данилка
+// .mob-container {
+//   padding-left: 15px;
+//   padding-right: 15px;
+//   margin: 0 auto;
+//   justify-content: space-between;
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   padding: 48px 40px;
+
+//   width: 480px;
+// }
+
+// .open-modalmenu {
+//   margin-left: auto;
+//   @include tablet {
+//     display: none;
+//   }
+// }
+
+// .mobail-menu {
+//   position: fixed;
+//   background-color: $text-color-actve;
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: coral;
+// }
+
+// .close-modalmenu {
+//   display: block;
+//   position: absolute;
+//   left: 85%;
+//   top: 21px;
+//   right: 25px;
+//   border: none;
+//   padding: 0;
+//   background-color: $text-color-actve;
+// }
+
+.mob-menu__link {
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: (47 / 40);
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #212121;
+}
+
+.mob-menu__link.site-link--active {
+  color: $accent-color;
+}
+
+.mob-menu__item {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.mob__link {
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  display: block;
+  color: #757575;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.numer {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+
+  color: $accent-color;
+}
+
+.mob-social {
+  display: flex;
+  margin-top: 64px;
+  justify-content: center;
+}
+
+.mob-social-list__items {
+  display: flex;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.mob-social-list__link {
+  text-decoration: none;
+  color: $accent-color;
+}

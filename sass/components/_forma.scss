@@ -1,0 +1,143 @@
+.form {
+  // width: 448px;
+  text-align: center;
+}
+
+.form__container-label:not(:first-child) {
+  margin-top: 28px;
+}
+
+.form-title {
+  margin-bottom: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: $primary-text-color;
+}
+
+.form__field {
+  position: relative;
+  display: block;
+}
+
+.form__input {
+  width: 100%;
+  margin: 0;
+  padding: 11px 30px;
+  font-family: 'Roboto';
+  color: #212121;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.form__label {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  transition: transform 250ms $animate;
+
+  .form__input:focus + &,
+  .form__input:not(:placeholder-shown) + & {
+    color: rgb(24, 140, 232);
+    left: 0px;
+    transform: translateY(-50px);
+  }
+}
+
+.field-icon {
+  height: 18px;
+  width: 18px;
+}
+
+.form-sent:focus-within .sent-label {
+  color: $accent-color;
+  left: -45px;
+  transform: translateY(-10px) rotate(-90deg);
+  transition-duration: 1500ms;
+}
+
+.form__input:focus {
+  border-radius: 4px;
+}
+
+.field-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+
+  transform: translateY(-50%);
+
+  .form__input:focus ~ & {
+    fill: $accent-color;
+  }
+}
+
+/*^ -------СТИЛИ ДЛЯ TEXTAREA------------ */
+
+.form-textarea {
+  resize: none;
+  width: 100%;
+  height: 120px;
+  display: block;
+  margin: 0;
+  padding: 12px 30px;
+  border: transparent;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.form__comment {
+  position: relative;
+  margin-top: 32px;
+}
+
+.comment-label {
+  position: absolute;
+  top: 8%;
+  left: 40px;
+  transform: translateY(-8%);
+  transition: transform 250ms $animate;
+
+  .form-textarea:focus + &,
+  .form-textarea:not(:placeholder-shown) + & {
+    color: $accent-color;
+    left: 0px;
+    transform: translateY(-42px);
+  }
+}
+
+.comment-icon {
+  position: absolute;
+  top: 8%;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-8%);
+}
+
+/*^ аналог функционала  form__label 
+который идет за form__label и свойство*/
+.form__comment:focus-within .comment-icon {
+  fill: $accent-color;
+}
+
+.form__field:focus-within .form__input,
+.form__comment:focus-within .form-textarea {
+  border: 1px solid $accent-color;
+}
+
+.form-textarea:focus,
+.form__input:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
+}

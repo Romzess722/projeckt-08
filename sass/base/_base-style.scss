@@ -1,0 +1,10 @@
+body {
+  font-family: 'Raleway', 'Roboto', sans-serif;
+  background-color: #ffffff;
+  letter-spacing: 0.03em;
+}
+
+//убирает скролл на мобильном меню
+body.mobail-menu {
+  overflow: hidden;
+}
