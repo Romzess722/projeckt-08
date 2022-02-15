@@ -138,6 +138,7 @@
 
 //стили для кнопки открытия-закрытия меню модалки Repeta
 .close-modalmenu {
+  z-index: 2;
   display: inline-flex;
   margin: 0;
   padding: 0;
@@ -149,7 +150,6 @@
   &:hover {
     fill: $accent-color;
   }
-  z-index: 1;
 }
 
 .icon-closemenu {
@@ -208,49 +208,9 @@
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
+  overflow-y: scroll;
+  z-index: 1;
 }
-
-//по видеоуроку Данилка
-// .mob-container {
-//   padding-left: 15px;
-//   padding-right: 15px;
-//   margin: 0 auto;
-//   justify-content: space-between;
-//   display: flex;
-//   flex-direction: column;
-//   height: 100%;
-//   padding: 48px 40px;
-
-//   width: 480px;
-// }
-
-// .open-modalmenu {
-//   margin-left: auto;
-//   @include tablet {
-//     display: none;
-//   }
-// }
-
-// .mobail-menu {
-//   position: fixed;
-//   background-color: $text-color-actve;
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   background-color: coral;
-// }
-
-// .close-modalmenu {
-//   display: block;
-//   position: absolute;
-//   left: 85%;
-//   top: 21px;
-//   right: 25px;
-//   border: none;
-//   padding: 0;
-//   background-color: $text-color-actve;
-// }
 
 .mob-menu__link {
   text-decoration: none;

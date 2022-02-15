@@ -602,13 +602,6 @@ body.mobail-menu {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.search {
-  display: flex;
-  width: 214px;
-  margin: 0 auto;
-  right: 10px;
-}
-
 .search__input {
   display: block;
   width: 100%;
@@ -639,6 +632,27 @@ body.mobail-menu {
   right: 10px;
   top: 50%;
   transform: translateY(-45%);
+}
+
+.search-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .search-desktop {
+    display: flex;
+    margin: 0 auto;
+  }
+}
+
+.search-mobail {
+  display: block;
+}
+
+@media screen and (min-width: 767px) {
+  .search-mobail {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1199px) {
@@ -838,12 +852,12 @@ body.mobail-menu {
 }
 
 .close-modalmenu {
+  z-index: 2;
   display: inline-flex;
   margin: 0;
   padding: 0;
   border: none;
   background-color: transparent;
-  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -902,6 +916,8 @@ body.mobail-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
+  overflow-y: scroll;
+  z-index: 1;
 }
 
 .mob-menu__link {

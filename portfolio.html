@@ -16,13 +16,90 @@
 </head>
 <body>
     <!--ШАПКА САЙТА -->
-<!-- <header class="header">
+<header class="header">
     <div class="container container--position">
+        <a class="logo container__logo" href="./index.html">Web<span class="logo__dark">Studio</span></a>
+        <!-- ПОИСК НА САЙТЕ  MOBAIL VERSION-->
+        <div class="search-mobail">
+            <form class="search__form">
+                <label class="search__label">
+                    <input class="search__input" type="search" autocomplete="off" spellcheck="true" placeholder="Что искать?">
+                    <svg class="search__icon">
+                        <use href="images/icons.svg#icon-search">
+                        </use>
+                    </svg>
+                </label>
+            </form>
+        </div>
         <nav class="container__header-nav">
-            <a class="logo container__logo" href="./index.html">Web<span class="logo__dark">Studio</span></a>
+
+            <button type="button" class="close-modalmenu " aria-controls="menu-container" aria-expanded="false"
+                data-menu-button>
+                <svg class="" width="40px" height="40px" aria-label="переключатель мобильного меню">
+                    <use class="icon-menu" href="images/icons.svg#icon-menu_open">
+                    </use>
+                    <use class="icon-closemenu" href="images/icons.svg#icon-close-black">
+                    </use>
+                </svg>
+            </button>
+
+            <div class="menu-container portfolio--position" id="menu-container" data-menu>
+                <div class="nav-top">
+                    <div class="navigation-menu">
+                        <ul class="mob-menu">
+                            <li class="mob-menu__item">
+                                <a class="mob-menu__link" href="./index.html">Студия</a>
+                            </li>
+                            <li class="mob-menu__item">
+                                <a class="mob-menu__link site-link--active" href="./portfolio.html">Портфолио</a>
+                            </li>
+                            <li class="mob-menu__item">
+                                <a class="mob-menu__link" href="./contact.html">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="nav-bottom">
+                    <div class="contact-menu">
+                        <div class="mob">
+                            <a class="mob__link numer" href="tel:+380961111111">
+                                +38 096 111 11 11
+                            </a>
+                            <a class="mob__link " href="mailto:info@devstudio.com">
+                                info@devstudio.com
+                            </a>
+                        </div>
+
+                        <ul class="mob-social">
+                            <li class="mob-social-list__items">
+                                <a href="" class="mob-social-list__link ">instagram
+                                </a>
+                            </li>
+
+                            <li class="mob-social-list__items">
+                                <a href="" class="mob-social-list__link ">twitter
+                                </a>
+                            </li>
+
+                            <li class="mob-social-list__items">
+                                <a href="" class="mob-social-list__link ">facebook
+                                </a>
+                            </li>
+
+                            <li class="mob-social-list__items">
+                                <a href="" class="mob-social-list__link ">linkedin
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
             <ul class="site-nav">
                 <li class="site-nav__item">
-                    <a class="site__link" href="./index.html">Студия</a>
+                    <a class="site__link " href="./index.html">Студия</a>
                 </li>
                 <li class="site-nav__item">
                     <a class="site__link site-link--active" href="./portfolio.html">Портфолио</a>
@@ -31,14 +108,13 @@
                     <a class="site__link" href="./contact.html">Контакты</a>
                 </li>
             </ul>
-        </nav> -->
+        </nav>
 
-        <!-- ПОИСК НА САЙТЕ -->
-        <!-- <div class="search">
+        <!-- ПОИСК НА САЙТЕ  Desktop VERSION-->
+        <div class="search-desktop">
             <form class="search__form">
                 <label class="search__label">
-                    <input class="search__input" type="search" autocomplete="off" spellcheck="true"
-                        placeholder="Что искать?">
+                    <input class="search__input" type="search" autocomplete="off" spellcheck="true" placeholder="Что искать?">
                     <svg class="search__icon">
                         <use href="images/icons.svg#icon-search">
                         </use>
@@ -46,7 +122,6 @@
                 </label>
             </form>
         </div>
-
         <div class="contact">
             <a class="contact__link" href="mailto:info@devstudio.com">
                 <svg class="contact__icon" width="16" height="12">
@@ -64,7 +139,7 @@
             </a>
         </div>
     </div>
-</header> -->
+</header>
 
 <main>
     <section class="section">
@@ -84,7 +159,18 @@
                 <li class="projeckts__item">
                     <a href="#" class="projeckts__link">
                         <div class="projeckts__wrap">
-                            <img src="./images/Технокряк.jpg" width="370" height="294" alt="">
+                            <picture>
+                                <source srcset="
+                                    ./portfolio/portfolio-desk-1-1x.jpg 1x,
+                                    ./portfolio/portfolio-desk-1-2x.jpg 2x" media="(min-width: 1200px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-tab-1-1x.jpg 1x,
+                                    ./portfolio/portfolio-tab-1-2x.jpg 2x" media="(min-width: 768px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-mob-1-1x.jpg 1x,
+                                    ./portfolio/portfolio-mob-1-2x.jpg 2x" media="(min-width: 480px)">
+                                <img src="./images/Технокряк.jpg" width="370" height="294" alt="Фото Технокряк">
+                            </picture>
                             <p class="projeckts__overlay">
                                 Каким должен быть ваш веб-сайт? обсудите план и дизайн веб-сайта, 
                                 прежде чем приступить к написанию кода.
@@ -98,11 +184,21 @@
                     </a>    
                 </li>
                 
-            
                 <li class="projeckts__item">
                     <a class="projeckts__link" href="#">
                         <div class="projeckts__wrap">
-                                <img src="./images/New Orlean vs Golden Star.jpg" width="370" height="294" alt="">
+                            <picture>
+                                <source srcset="
+                                    ./portfolio/portfolio-desk-2-1x.jpg 1x,
+                                    ./portfolio/portfolio-desk-2-2x.jpg 2x" media="(min-width: 1200px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-tab-2-1x.jpg 1x,
+                                    ./portfolio/portfolio-tab-2-2x.jpg 2x" media="(min-width: 768px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-mob-2-1x.jpg 1x,
+                                    ./portfolio/portfolio-mob-2-2x.jpg 2x" media="(min-width: 480px)">
+                                <img src="./images/New Orlean vs Golden Star.jpg" width="370" height="294" alt="Постер New Orlean vs Golden Star">
+                            </picture>
                                 <p class="projeckts__overlay">
                                     Что такое дизайн простыми словами?
                                     Дизайн (от англ. design — проектировать, чертить, задумать, а также проект, план, рисунок) — деятельность по
@@ -121,7 +217,18 @@
                 <li class="projeckts__item">
                     <a class="projeckts__link" href="#">
                         <div class="projeckts__wrap">
-                                <img src="./images/Seafood.jpg" width="370" height="294" alt="">
+                            <picture>
+                                <source srcset="
+                                    ./portfolio/portfolio-desk-3-1x.jpg 1x,
+                                    ./portfolio/portfolio-desk-3-2x.jpg 2x" media="(min-width: 1200px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-tab-3-1x.jpg 1x,
+                                    ./portfolio/portfolio-tab-3-2x.jpg 2x" media="(min-width: 768px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-mob-3-1x.jpg 1x,
+                                    ./portfolio/portfolio-mob-3-2x.jpg 2x" media="(min-width: 480px)">
+                                <img src="./images/Seafood.jpg" width="370" height="294" alt=" Фото Ресторан Seafood">
+                            </picture>
                                 <p class="projeckts__overlay">Приложение — добавление к документу, странице, без которого бы нельзя было разобраться
                                     в той или иной содержащейся
                                     информации.
@@ -138,7 +245,18 @@
                 <li class="projeckts__item">
                     <a class="projeckts__link" href="#">
                         <div class="projeckts__wrap">
-                                <img src="./images/Проект Prime.jpg" width="370" height="294" alt="">
+                            <picture>
+                                <source srcset="
+                                    ./portfolio/portfolio-desk-4-1x.jpg 1x,
+                                    ./portfolio/portfolio-desk-4-2x.jpg 2x" media="(min-width: 1200px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-tab-4-1x.jpg 1x,
+                                    ./portfolio/portfolio-tab-4-2x.jpg 2x" media="(min-width: 768px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-mob-4-1x.jpg 1x,
+                                    ./portfolio/portfolio-mob-4-2x.jpg 2x" media="(min-width: 480px)">
+                                <img src="./images/Проект Prime.jpg" width="370" height="294" alt="Фото Проект Prime">
+                            </picture>
                                 <p class="projeckts__overlay">
                                     Маркетинг – это деятельность, которая ставит своей целью получение прибыли с помощью удовлетворения потребностей
                                     покупателей.
@@ -155,7 +273,18 @@
                 <li class="projeckts__item">
                     <a class="projeckts__link" href="#">
                         <div class="projeckts__wrap">
-                                <img src="./images/Проект Boxes.jpg" width="370" height="294" alt="">
+                            <picture>
+                                <source srcset="
+                                    ./portfolio/portfolio-desk-5-1x.jpg 1x,
+                                    ./portfolio/portfolio-desk-5-2x.jpg 2x" media="(min-width: 1200px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-tab-5-1x.jpg 1x,
+                                    ./portfolio/portfolio-tab-5-2x.jpg 2x" media="(min-width: 768px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-mob-5-1x.jpg 1x,
+                                    ./portfolio/portfolio-mob-5-2x.jpg 2x" media="(min-width: 480px)">
+                                <img src="./images/Проект Boxes.jpg" width="370" height="294" alt="Фото Проект Boxes">
+                            </picture>
                                 <p class="projeckts__overlay">
                                     Приложение — добавление к документу, странице, без которого бы нельзя было разобраться в той или иной содержащейся
                                     информации.
@@ -172,7 +301,18 @@
                 <li class="projeckts__item">
                     <a class="projeckts__link" href="#">
                         <div class="projeckts__wrap">
-                                <img src="./images/Inspiration has no Borders.jpg" width="370" height="294" alt="">
+                            <picture>
+                                <source srcset="
+                                    ./portfolio/portfolio-desk-6-1x.jpg 1x,
+                                    ./portfolio/portfolio-desk-6-2x.jpg 2x" media="(min-width: 1200px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-tab-6-1x.jpg 1x,
+                                    ./portfolio/portfolio-tab-6-2x.jpg 2x" media="(min-width: 768px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-mob-6-1x.jpg 1x,
+                                    ./portfolio/portfolio-mob-6-2x.jpg 2x" media="(min-width: 480px)">
+                                <img src="./images/Inspiration has no Borders.jpg" width="370" height="294" alt="Фото Inspiration has no Borders">
+                            </picture>
                                 <p class="projeckts__overlay">
                                     Каким должен быть ваш веб-сайт? обсудите план и дизайн веб-сайта, прежде чем приступить к написанию кода
                                 </p>
@@ -188,7 +328,18 @@
                 <li class="projeckts__item">
                     <a class="projeckts__link" href="#">
                         <div class="projeckts__wrap">
-                                <img src="./images/Limited Edition.jpg" width="370" height="294" alt="">
+                            <picture>
+                                <source srcset="
+                                    ./portfolio/portfolio-desk-7-1x.jpg 1x,
+                                    ./portfolio/portfolio-desk-7-2x.jpg 2x" media="(min-width: 1200px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-tab-7-1x.jpg 1x,
+                                    ./portfolio/portfolio-tab-7-2x.jpg 2x" media="(min-width: 778px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-mob-7-1x.jpg 1x,
+                                    ./portfolio/portfolio-mob-7-2x.jpg 2x" media="(min-width: 480px)">
+                                <img src="./images/Limited Edition.jpg" width="370" height="294" alt="Фото Limited Edition">
+                            </picture>
                                 <p class="projeckts__overlay">
                                     Что такое дизайн простыми словами?
                                     Дизайн (от англ. design — проектировать, чертить, задумать, а также проект, план, рисунок) — деятельность по
@@ -207,7 +358,18 @@
                 <li class="projeckts__item">
                     <a class="projeckts__link" href="#">
                         <div class="projeckts__wrap">
-                                <img src="./images/Проект LAB.jpg" width="370" height="294" alt="">
+                            <picture>
+                                <source srcset="
+                                    ./portfolio/portfolio-desk-8-1x.jpg 1x,
+                                    ./portfolio/portfolio-desk-8-2x.jpg 2x" media="(min-width: 1200px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-tab-8-1x.jpg 1x,
+                                    ./portfolio/portfolio-tab-8-2x.jpg 2x" media="(min-width: 778px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-mob-8-1x.jpg 1x,
+                                    ./portfolio/portfolio-mob-8-2x.jpg 2x" media="(min-width: 480px)">
+                                <img src="./images/Проект LAB.jpg" width="370" height="294" alt="Фото Проект LAB">
+                            </picture>
                                 <p class="projeckts__overlay">
                                     Маркетинг – это деятельность, которая ставит своей целью получение прибыли с помощью удовлетворения потребностей
                                     покупателей.
@@ -224,7 +386,18 @@
                 <li class="projeckts__item">
                     <a class="projeckts__link" href="#">
                         <div class="projeckts__wrap">
-                                <img src="./images/Growing Business.jpg" width="370" height="294" alt="">
+                            <picture>
+                                <source srcset="
+                                    ./portfolio/portfolio-desk-9-1x.jpg 1x,
+                                    ./portfolio/portfolio-desk-9-2x.jpg 2x" media="(min-width: 1200px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-tab-9-1x.jpg 1x,
+                                    ./portfolio/portfolio-tab-9-2x.jpg 2x" media="(min-width: 778px)">
+                                <source srcset="
+                                    ./portfolio/portfolio-mob-9-1x.jpg 1x,
+                                    ./portfolio/portfolio-mob-9-2x.jpg 2x" media="(min-width: 480px)">
+                                <img src="./images/Growing Business.jpg" width="370" height="294" alt="Фото Growing Business">
+                            </picture>
                                 <p class="projeckts__overlay">
                                     Приложение — добавление к документу, странице, без которого бы нельзя было разобраться в той или иной содержащейся
                                     информации.
@@ -323,6 +496,6 @@
 
 </footer>
 <script src="./js/modal.js"></script>
-    
+<script src="./js/mobile-menu.js"></script>
 </body>
 </html>

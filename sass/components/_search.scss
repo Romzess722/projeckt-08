@@ -1,8 +1,8 @@
 .search {
-  display: flex;
-  width: 214px;
-  margin: 0 auto;
-  right: 10px;
+  // display: flex;
+  // width: 214px;
+  // margin: 0 auto;
+  // right: 10px;
 }
 
 .search__input {
@@ -36,4 +36,19 @@
   right: 10px;
   top: 50%;
   transform: translateY(-45%);
+}
+
+.search-desktop {
+  display: none;
+  @media screen and(min-width: 1200px) {
+    display: flex;
+    margin: 0 auto;
+  }
+}
+
+.search-mobail {
+  display: block;
+  @media screen and(min-width: 767px) {
+    display: none;
+  }
 }

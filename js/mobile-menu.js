@@ -10,6 +10,10 @@
     menuBtnRef.setAttribute("aria-expanded", !expanded);
 
     mobileMenuRef.classList.toggle("is-open");
+    function toggleMenul() {
+    document.body.classList.toggle('modal-open');
+    refs.menu.classList.toggle('is-hidden');
+  }
   });
 })();
 
